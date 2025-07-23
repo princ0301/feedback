@@ -2,10 +2,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import { Pool } from 'pg';
 
 const pool = new Pool({
-  user: 'neondb_owner',
-  host: 'ep-spring-math-a1a3qcuy-pooler.ap-southeast-1.aws.neon.tech',
-  database: 'neondb',
-  password: 'npg_V25rPGnUScai',
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
   port: 5432,
   ssl: { rejectUnauthorized: false },
 });
